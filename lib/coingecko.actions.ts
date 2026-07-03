@@ -1,6 +1,7 @@
 'use server';
 
 import qs from 'query-string';
+import { cache } from 'react';
 
 const BASE_URL = process.env.COINGECKO_BASE_URL;
 const API_KEY = process.env.COINGECKO_API_KEY;
