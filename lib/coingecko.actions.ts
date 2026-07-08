@@ -70,3 +70,47 @@ export async function getPools(
         return fallback;
     }
 }
+
+export async function searchCoins(query: string): Promise<SearchCoin[]> {
+    if (!query.trim()) return [];
+
+    const searchResults = await fetcher<{ coins: SearchResultCoin[] }>(
+        '/search',
+        { query }
+    );
+
+    const topResults = searchResults.coins?.slice(0, 10) ?? [];
+    if (topResults.length === 0) return [];
+
+    const ids = topResults.map((coin) => coin.id).join(',');
+
+    const marketData = await fetcher<CoinMarketData[]>(
+        '/coins/markets',
+        {
+            vs_currency: 'usd',
+            ids,
+            order: 'market_cap_desc',
+            sparkline: 'false',
+            price_change_percentage: '24h',
+        }
+    );
+
+    const marketById = new Map(marketData.map((coin) => [coin.id, coin]));
+
+    return topResults.map((coin): SearchCoin => {
+        const market = marketById.get(coin.id);
+
+        return {
+            id: coin.id,
+            name: coin.name,
+            symbol: coin.symbol,
+            market_cap_rank: coin.market_cap_rank,
+            thumb: coin.thumb,
+            large: coin.large,
+            data: {
+                price: market?.current_price,
+                price_change_percentage_24h: market?.price_change_percentage_24h ?? 0,
+            },
+        };
+    });
+}

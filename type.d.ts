@@ -316,3 +316,12 @@ interface PoolData {
   name: string;
   network: string;
 }
+
+interface SearchResultCoin {
+  id: string;
+  name: string;
+  symbol: string;
+  market_cap_rank: number | null;
+  thumb: string;
+  large: string;
+}
