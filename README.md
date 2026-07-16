@@ -151,7 +151,7 @@ The platform delivers a modern dark-themed trading experience inspired by profes
                                ▼
                         React Components
                                │
-      --------------------------------------------------
+      -------------------------------------------
       │                    │                    │
       ▼                    ▼                    ▼
 
