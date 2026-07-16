@@ -1,12 +1,16 @@
 # 🚀 Crypto Trading Terminal
 
 <p align="center">
-  <strong>A modern real-time cryptocurrency market dashboard built with Next.js, React, TypeScript, and Lightweight Charts.</strong>
+  <strong>A modern real-time cryptocurrency market dashboard built with Next.js, React, TypeScript, Lightweight Charts, WebSockets, and Webhooks.</strong>
 </p>
 
 <p align="center">
-  <a href="https://crypto-trading-terminal-two.vercel.app/"><img src="https://img.shields.io/badge/Live%20Demo-Visit%20Now-7CFF4F?style=for-the-badge" /></a>
-  <a href="https://github.com/IdushaGaravi/Crypto-Trading-Terminal"><img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" /></a>
+  <a href="https://crypto-trading-terminal-two.vercel.app/">
+    <img src="https://img.shields.io/badge/Live%20Demo-Visit%20Now-7CFF4F?style=for-the-badge" />
+  </a>
+  <a href="https://github.com/IdushaGaravi/Crypto-Trading-Terminal">
+    <img src="https://img.shields.io/badge/GitHub-Repository-black?style=for-the-badge&logo=github" />
+  </a>
 </p>
 
 ---
@@ -23,26 +27,44 @@ https://github.com/IdushaGaravi/Crypto-Trading-Terminal
 
 ## 📖 Overview
 
-Crypto Trading Terminal is a professional cryptocurrency market analytics dashboard designed to provide traders and investors with an intuitive way to monitor market movements, explore trending coins, analyze price action, and track cryptocurrency categories.
+Crypto Trading Terminal is a professional cryptocurrency market analytics dashboard designed to provide traders and investors with an intuitive way to monitor market movements, explore trending coins, analyze price action, and track cryptocurrency categories in real time.
 
-The platform delivers a clean dark-themed trading experience inspired by modern financial terminals while maintaining excellent performance and responsiveness.
+The platform delivers a modern dark-themed trading experience inspired by professional financial terminals while maintaining excellent performance, responsiveness, and scalability through WebSocket and Webhook-based real-time data synchronization.
 
 ---
 
 ## ✨ Features
 
 ### 📊 Real-Time Market Dashboard
+
 - Interactive candlestick charts
 - Multiple time period selections
-- Live market statistics
+- Live cryptocurrency market statistics
 - Category-based market analysis
+- Real-time price updates
+
+### ⚡ WebSocket Integration
+
+- Real-time cryptocurrency price streaming
+- Low latency market updates
+- Automatic UI synchronization
+- Seamless live data updates without page refresh
+
+### 🔗 Webhook Integration
+
+- Event-driven market data synchronization
+- Efficient server-to-server communication
+- Scalable real-time data handling
+- Fast market information updates
 
 ### 🔥 Trending Coins
+
 - View trending cryptocurrencies
 - Track 24-hour price movements
 - Quick access to detailed coin pages
 
 ### 🔍 Advanced Search
+
 - Search cryptocurrencies by:
   - Coin name
   - Symbol
@@ -50,6 +72,7 @@ The platform delivers a clean dark-themed trading experience inspired by modern 
 - Fast command-style search experience
 
 ### 🪙 Detailed Coin Analytics
+
 - Individual cryptocurrency pages
 - Market cap information
 - Trading volume statistics
@@ -57,20 +80,24 @@ The platform delivers a clean dark-themed trading experience inspired by modern 
 - External website & explorer links
 
 ### 💱 Cryptocurrency Converter
+
 - Real-time token conversion
 - Currency exchange calculations
 - User-friendly conversion interface
 
 ### 📈 Market Categories
+
 - Smart Contract Platforms
 - Layer 1 Networks
 - Proof of Work Projects
 - Proof of Stake Projects
 - Stablecoins
 - Exchange Tokens
+- USD Stablecoins
 - And many more
 
 ### 📱 Responsive Design
+
 - Desktop optimized
 - Tablet friendly
 - Mobile responsive
@@ -107,22 +134,31 @@ The platform delivers a clean dark-themed trading experience inspired by modern 
 ## 🏗️ System Architecture
 
 ```text
-User
- │
- ▼
-Next.js Application
- │
- ├── Dashboard
- ├── Coin Search
- ├── Coin Details
- ├── Converter
- └── Market Categories
- │
- ▼
-External Cryptocurrency APIs
- │
- ▼
-Real-Time Market Data
+                     Cryptocurrency APIs
+                               │
+                               │
+                           Webhooks
+                               │
+                               ▼
+                      Next.js Application
+                               │
+                               │
+                          WebSockets
+                               │
+                               ▼
+                     Real-Time Market Data
+                               │
+                               ▼
+                        React Components
+                               │
+      --------------------------------------------------
+      │                    │                    │
+      ▼                    ▼                    ▼
+
+  Dashboard            Coin Details          Converter
+                               │
+                               ▼
+                     Lightweight Charts
 ```
 
 ---
@@ -143,6 +179,17 @@ Real-Time Market Data
 | Lucide React | 1.23.0 |
 | Radix UI | 1.6.0 |
 | ShadCN UI | 4.12.0 |
+
+---
+
+## Real-Time Technologies
+
+| Technology | Purpose |
+|------------|----------|
+| WebSockets | Real-time cryptocurrency price updates |
+| Webhooks | Event-driven market data synchronization |
+| Lightweight Charts | Financial chart rendering |
+| SWR | Client-side data fetching and caching |
 
 ---
 
@@ -239,21 +286,18 @@ npm start
 
 # 🎯 Key Highlights
 
-✅ Modern Trading Terminal UI
-
-✅ Real-Time Cryptocurrency Tracking
-
-✅ Interactive Candlestick Charts
-
-✅ Advanced Search Experience
-
-✅ Coin Converter
-
-✅ Responsive Design
-
-✅ Optimized Performance
-
-✅ Built with Latest Next.js 16 & React 19
+- Modern Trading Terminal UI
+- Real-Time Cryptocurrency Tracking
+- WebSocket Integration
+- Webhook Integration
+- Interactive Candlestick Charts
+- Advanced Search Experience
+- Coin Converter
+- Responsive Design
+- Optimized Performance
+- Built with Next.js 16 & React 19
+- Real-Time Market Data Synchronization
+- Production Ready Deployment on Vercel
 
 ---
 
@@ -269,7 +313,6 @@ https://crypto-trading-terminal-two.vercel.app/
 
 # 📈 Future Improvements
 
-- WebSocket-based real-time updates
 - Portfolio tracking
 - Watchlists
 - Trading indicators
@@ -277,6 +320,7 @@ https://crypto-trading-terminal-two.vercel.app/
 - User authentication
 - Historical portfolio analytics
 - AI-powered market insights
+- Multi-currency support
 
 ---
 
@@ -308,5 +352,5 @@ If you found this project useful, consider giving it a **star** on GitHub.
 ---
 
 <p align="center">
-  Built with ❤️ using Next.js, React, TypeScript and Tailwind CSS
+  Built with ❤️ using Next.js, React, TypeScript, Tailwind CSS, WebSockets, and Webhooks.
 </p>
